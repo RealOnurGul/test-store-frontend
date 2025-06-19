@@ -45,19 +45,19 @@ const ProductDetail = () => {
           <div className="product-images">
             <div className="main-image">
               <img 
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDYwMCA5MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjRjVGNUY1Ii8+Cjx0ZXh0IHg9IjMwMCIgeT0iNDUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBST0RVQ1QgSU1BR0U8L3RleHQ+Cjwvc3ZnPgo=" 
+                src={product.images[currentImageIndex]} 
                 alt={product.name} 
               />
             </div>
             <div className="thumbnail-images">
-              {product.images.map((_, index) => (
+              {product.images.map((image, index) => (
                 <button
                   key={index}
                   className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
                   onClick={() => setCurrentImageIndex(index)}
                 >
                   <img 
-                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjVGNUY1Ii8+Cjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj57aW5kZXggKyAxfTwvdGV4dD4KPHN2Zz4K" 
+                    src={image} 
                     alt={`${product.name} ${index + 1}`} 
                   />
                 </button>
